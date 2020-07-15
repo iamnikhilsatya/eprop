@@ -17,9 +17,10 @@ const authRoutes = require('./routes/auth')
 
 const userRoutes = require('./routes/user')
 
+const photoRoutes = require('./routes/photo')
 
 
-const port = process.env.PORT|| 8001
+const port = process.env.PORT|| 8000
 
 //DB connection 
 let connnection= mongoose.connect(process.env.DATABASE, {
@@ -48,6 +49,7 @@ app.use("/api",authRoutes)
 
 app.use("/api",userRoutes)
 
+app.use("/api",photoRoutes)
 
 
 app.listen(port,()=>{
