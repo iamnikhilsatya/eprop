@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import Base from '../core/Base';
 import {Link, Redirect} from 'react-router-dom';
 import { signup } from '../auth/helper';
+import AWS from './AWS'
+import Message from './Message';
+import Progress from './Progress';
+import axios from 'axios';
 
 const Signup = () => {
+	
+
 	const [ values, setValues ] = useState({
 		name: '',
 		email: '',
@@ -13,6 +19,8 @@ const Signup = () => {
 		error: '',
 		success: false
 	});
+	
+	
 
 	const { name, email, password,title,status, error, success } = values;
 
@@ -112,8 +120,7 @@ const Signup = () => {
   </div>
   <div class="custom-file">
  
-    <input type="file" class="custom-file-input" id="inputGroupFile01"
-      aria-describedby="inputGroupFileAddon01"/>
+    <AWS />
     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
   </div>
 </div>
